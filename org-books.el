@@ -145,7 +145,7 @@ is not supported, throw an error."
     (with-temp-file file-path
       (insert "#+TITLE: Reading List\n"
               "#+AUTHOR: " (replace-regexp-in-string "" " " user-full-name) "\n\n"
-              "#+TODO: READING NEXT | READ\n\n"))))
+              "#+TODO: TOREAD READING | READ\n\n"))))
 
 (defun org-books-all-authors ()
   "Return a list of authors in the `org-books-file'."
@@ -185,7 +185,7 @@ from `org-map-entries'."
   "Return books that are currently active. Each item returned is
 a pair of book name and position of the headline. Activity is
 assumed, by default, to be marked by READING TODO state."
-  (let ((active-todo-keyword "READING"))
+  (let ((active-todo-keyword "TOREAD"))
     (org-books-map-entries
      (lambda ()
        (cons
