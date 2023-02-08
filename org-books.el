@@ -315,7 +315,8 @@ Optionally apply PROPS."
   "Apply RATING to book at current point."
   (interactive "nRating (stars 1-5): ")
   (if (> rating 0)
-      (org-set-property "RATING" (s-repeat rating ":star:"))))
+      ;; (org-set-property "RATING" (s-repeat rating ":star:"))))
+      (org-set-property "RATING" (s-repeat rating "⭐"))))
 
 (provide 'org-books)
 ;;; org-books.el ends here
